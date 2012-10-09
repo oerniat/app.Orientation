@@ -1,0 +1,511 @@
+$base-color: #166dcf;
+$active-color: #ABD6FF;
+$form-bg-color: #FFFFFF;
+$page-bg-color: #E9F4FE;           
+
+$linde-dunkelblau: #000077;
+$linde-bg-start: #E9F4FE;
+$linde-bg-end: #FFFFFF;
+$linde-gelb: #FF0;
+
+$linde-fontsize-large: larger;
+$linde-fontsize-normal: normal;
+$linde-fontsize-small: smaller;
+
+$linde-error-color: #ff0000;
+$linde-error-bg: #ffe8e8;
+$linde-error-border-color: #ffd8d8;
+
+$linde-fontcolor-comment: #9A9A9A;
+
+$linde-validationicon-size: 22px;
+
+$include_default_icons: false;
+
+@import 'sencha-touch/default/all';
+
+// You may remove any of the following modules that you
+// do not use in order to create a smaller css file.
+@include sencha-panel;
+@include sencha-buttons;
+@include sencha-sheet;
+@include sencha-picker;
+@include sencha-tabs;
+@include sencha-toolbar;
+@include sencha-toolbar-forms;
+
+// @include sencha-toolbar-ui('white', #FFFFFF);    // Bottom Toolbar
+
+@include sencha-indexbar;
+@include sencha-list;
+@include sencha-layout;
+@include sencha-carousel;
+@include sencha-form;
+@include sencha-msgbox;
+
+
+//@include pictos-iconmask("bookmarks");
+
+
+// ********************************************************************************************
+// ** Symbole (Rufzeicen, ...)
+// ********************************************************************************************
+@mixin span-icon {
+  float: right;
+  height: $linde-validationicon-size;
+  line-height: 11px;
+  font-size: $linde-fontsize-normal;
+  font-weight: 800;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  margin-right: 4px;
+  text-align: center;
+  padding-top: 4px;
+  }
+
+.iconexclamation {
+  @include span-icon;
+  width: $linde-validationicon-size;
+  color: $linde-error-color;
+  background-color: $linde-error-bg;
+  border: 1px solid $linde-error-border-color;
+  }
+
+.iconexclamation:after {
+  content: '\01c3';
+  }
+
+.iconcheckmark {
+  @include span-icon;
+  width: $linde-validationicon-size;
+  color: green;
+  background-color: #e8ffe8;
+  border: 1px solid #a8ffa8;
+  }
+
+.iconcheckmark:after {
+  content: '\2714';
+  }
+
+// ********************************************************************************************
+// ** LogoPage
+// ********************************************************************************************
+
+// Hintergrund (Tablet).
+.LogoPageTablet {
+	text-align: center;
+}
+
+// Text
+.LogoPageText {
+}
+
+// ********************************************************************************************
+// ** ContentPage (Hintergründe, ...)
+// ********************************************************************************************
+
+// ContentPage.
+.ContentPage {
+	background-image: -webkit-linear-gradient(bottom, $linde-bg-start 20%, $linde-bg-end 95%);
+}
+
+// Container am unteren Seitenende.
+.ContentToolbarBottom {
+	background-color: $linde-bg-start;
+	border-right: 1px;
+	border-color: #000000;
+}
+
+.pageHeader
+{
+  font-size: 17px;
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: left;
+}
+
+.x-form .x-scroll-container {
+	background-image: -webkit-linear-gradient(bottom, $linde-bg-start 20%, $linde-bg-end 95%);
+}
+
+.CurrentUser {
+	padding: 10px;
+	font-size: $linde-fontsize-large;
+    font-weight: bold;
+}
+
+// ********************************************************************************************
+// ** Buttons
+// ********************************************************************************************
+
+.btnActionLarge 
+{
+     padding: 5px;
+	 margin: 5px;
+     width: 70px;
+     height: 70px;
+     -webkit-mask-size: 64px 64px;
+     -webkit-mask-repeat: no-repeat;
+     -webkit-mask-origin: content;
+     background-image: -webkit-gradient(linear, 0% 0%, 0% 100%,
+      from(rgba(255, 255, 255, 0.7)), to(rgba(0, 0, 77, 1)));
+     background-color: #000000;
+}
+
+.btnActionMiddle
+{
+     padding: 5px;
+	 margin: 5px;
+     width: 55px;
+     height: 55px;
+     -webkit-mask-size: 48px 48px;
+     -webkit-mask-repeat: no-repeat;
+     -webkit-mask-origin: content;
+     background-image: -webkit-gradient(linear, 0% 0%, 0% 100%,
+      from(rgba(255, 255, 255, 0.7)), to(rgba(0, 0, 77, 1)));
+     background-color: #000000;
+}
+
+.btnActionSmall
+{
+     padding: 5px;
+	 margin: 5px;
+     width: 40px;
+     height: 40px;
+     -webkit-mask-size: 32px 23px;
+     -webkit-mask-repeat: no-repeat;
+     -webkit-mask-origin: content;
+     background-image: -webkit-gradient(linear, 0% 0%, 0% 100%,
+      from(rgba(255, 255, 255, 0.7)), to(rgba(0, 0, 77, 1)));
+     background-color: #000000;
+}
+
+.btnDashboardDark {
+    -webkit-mask-image: url('../images/buttons/mdpi/dashboard_dark.png');
+ }
+
+.btnAboutDark {
+    -webkit-mask-image: url('../images/buttons/mdpi/about_dark.png');
+ }
+
+.btnNextDark {
+    -webkit-mask-image: url('../images/buttons/mdpi/next_dark.png');
+ }
+
+.btnPriorDark {
+    -webkit-mask-image: url('../images/buttons/mdpi/prior_dark.png');
+ }
+
+.btnCancelDark {
+    -webkit-mask-image: url('../images/buttons/mdpi/cancel_dark.png');
+ }
+
+.btnDiscardDark {
+    -webkit-mask-image: url('../images/buttons/mdpi/discard_dark.png');
+ }
+
+.btnSubmitDark {
+    -webkit-mask-image: url('../images/buttons/mdpi/submit_dark.png');
+ }
+
+.btnAddDark {
+    -webkit-mask-image: url('../images/buttons/mdpi/add_dark.png');
+ }
+
+.btnAddLight {
+    -webkit-mask-image: url('../images/buttons/mdpi/add_light.png');
+ }
+
+.btnNoticeDark {
+    -webkit-mask-image: url('../images/buttons/mdpi/notice_dark.png');
+ }
+
+.btnNoNoticeDark {
+    -webkit-mask-image: url('../images/buttons/mdpi/nonotice_dark.png');
+ }
+
+
+ 
+// ********************************************************************************************
+// ** NestedList (Main)
+// ********************************************************************************************
+
+/* Toolbar-Titel der NestedList */
+.ListTitle
+{
+    font-size: $linde-fontsize-large;
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.x-list {
+	background-image: -webkit-linear-gradient(bottom, $linde-bg-start 20%, $linde-bg-end 95%);
+ }
+
+ .x-list-normal .x-list-item:first-child .x-list-item-label {
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-moz-border-radius-topleft: 10px;
+	-moz-border-radius-topright: 10px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px; 
+}
+
+.x-list .x-list-item {
+  position: relative;
+  color: #000000;
+  -webkit-border-top-left-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+  -moz-border-radius-topleft: 10px;
+  -moz-border-radius-topright: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.x-list-normal .x-list-item:last-child .x-list-item-label {
+  border-bottom: 2px solid $linde-dunkelblau;
+  border-left: 2px solid $linde-dunkelblau;
+  border-right: 2px solid $linde-dunkelblau;
+  -webkit-border-bottom-left-radius: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.x-list-normal .x-list-item:first-child .x-list-item-label {
+  border-top: 2px solid $linde-dunkelblau;
+  border-left: 2px solid $linde-dunkelblau;
+  border-right: 2px solid $linde-dunkelblau;
+  -webkit-border-top-left-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+.x-list-normal .x-list-item .x-list-item-label {
+  border-left: 2px solid $linde-dunkelblau;
+  border-right: 2px solid $linde-dunkelblau;
+  border-top: 2px solid #dedede;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.NavArrow 
+{
+    color: Gray;
+    font-size: $linde-fontsize-large;
+}
+
+.NavTable
+{
+    width: 100%;
+}
+
+.NavTableRow
+{
+}
+
+.NavTableColumn1
+{
+	width: 80%;
+    text-align: left;
+}
+
+.NavTableColumn2
+{
+	width: 20%;
+    text-align: right;
+	vertical-align: middle;
+}
+
+.ListValue 
+{
+    color:gray;
+    font-size: $linde-fontsize-small;
+	margin-top: 0.3em;
+    text-align:right;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.NestedListDisclosure {
+  overflow: visible;
+  float: right;
+  -webkit-mask: 0 0 url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpFNkNCM0JGNTZFMjI2ODExQkNGQjkwMzk3MDc3MkZFQiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo3M0MzQUU1QUFDQkQxMURGOEQ2MUVDMjM0MzY2NTBDQSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo3M0MzQUU1OUFDQkQxMURGOEQ2MUVDMjM0MzY2NTBDQSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkU3Q0IzQkY1NkUyMjY4MTFCQ0ZCOTAzOTcwNzcyRkVCIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkU2Q0IzQkY1NkUyMjY4MTFCQ0ZCOTAzOTcwNzcyRkVCIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+uoWjuwAACh9JREFUeNrUm2toVdkVx7eJRqPRaHzFGBOjidGYaLQaX9GREXXAkloYQVpT+qFYBkcqLS0zTKFQWpwv86F0KLRfHFqnWDq0UCsMFYqlqHSwGo2v4Du+X9FoNL5P12/N3rLn9Cb33HNvrnHDujfnnHvO2f+91l57/dfaGWBe8xYEQUq/H5ilftWIVIoU2+Ov2e/jIt0inSKnRVpEnvdlR/oK8CKRt0QaRd4QyU3hXkDvFvmXyOeZHoABGXzWWJF3RL4rUuFfKC4uNmPHjjUjRozQ44kTJ+r3jRs3zNOnT013d7e5deuWuXTpknnx4oV/602RP4n8TqQ1EyadCcBlIh9YoHmcqKioMFOnTjXl5eVm1KhR5smTJwrs+fPnCohvOjpw4ECTk5Ojwt/5+fnmzp075vr16+bkyZPm1KlT/nv+KvJLkf++KsCAe89KPidmz55t5s6dawoLC839+/fNo0ePFCwgHjx4oMe0u3fv6vfw4cNNbm6uGTRokCkoKNDBycvLU+DDhg3TQTp27Jg5fPiwuXfvnnvvJyI/EunIJmCczqci1RzMmzfPLFiwQF9Ox65cuWKuXr2qZoqk0ikGa/z48WbcuHFm0qRJOihDhw41LS0tZu/evToI1sl9W2RXNgC/K/IRGp42bZpZsmSJasSZ4fnz51WbmWiDBw9W0NXV1TrvOd6zZ49pbX05nd8XwB/2FWA87a+tYzKLFi0yixcvVoCY3NmzZ8MOJ6OttLRUpwy+4dy5c2bnzp3u0h9FvifAuzMJmPm6Q+SbHGzYsEHn3P79+83Ro0fVCWWrVVZWmqVLl+rfO3bsUA8v7QuRbwjoa5l6z2/xD7KsBJs3bw7WrVsXiINh8rwSGTJkSLBmzRrtS1lZmTv/H5wnc7o3iTpnA1k69AXLli0LZAmJ1VGeQWfFEek3x3FBc684ymDLli0+6E/TBfymyDMeJmasL4jbSe4bPXp0MGvWLJX6+vpAApJAlqTYoAcMGBDU1NQEmzZtCsRxuvPvxQVM7Hubh4gnDsRJxdYsInM+kOUrkHVXj/lmAGVOBuJ909K0rBZBc3OzO4eCmuIA/jcPkEAiWLVqVVqdQjA7WWLc8TZ3ns7W1tYGstaqxuI8m8GbM2dOIKuGO3dDpCAVwCw9QUlJSbB+/XrfXGLLzJkzffMtFNko8pjjyZMnq4njFONOGRSyevVqNXF77hdRARc4U167dm0wZsyYjHhW5m0IsLFMCm0EEl0FDQ0NgZCMl2afqjBgTU1N7vg+PCUK4B9yw/Tp0wNZ6NOatxEAO/JxxC03mCWmH8eZMVBVVVVBXV2dO/ebMOCcEFhIwI/5g1j2woUL5tmzZ30dS7SLLBb5DHKxb98+jaVhXDIAKT2IAIgYnnjcto3iF6r934QBr4G+Tpkyxdy+fdt0dXVlK4DiRetEfs7BgQMHtPPE6rAm6XTkBz18+FDJC2GoDYc39ga4mQ9ZL5UMZEG74fYzC7zrzJkzSitlaqnG4MxRGvH8zZs3daBs+5YMWG6iFE+R1bA+HD6bNBCXkcfsioqKNJsBl+1JGwT9J06ciNLnz0TaRP5+8eLFMvohnlfJCVQzihLQMoMF05JnFNsAanf4dxCDoLy8XIOBKGsiyxXLjUyBQEY0FQdTGDFltMdFVAQ+MmiR4wGiONZme7w1kdNayYcsQ0rio8SdaBa2wuhnigOH8lmryGfRF5gZaSDYEvw7qVMQ/4PF+djCc7iBD9ItUTtPNoK5blu5pZtRpDMi6Cci3xfZjBNua2tTc8WZ8e7e5jWK8GhrvVhJng841+aOdY643FPSjEBubrac2cciK8hjQf6vXbumzowcWE99ACyKGzlypMNX6QNmYueTO3r8+HFWCX0KjTz1AtK1WNXx48c19TNhwgS1ykQNLFiCR4ZeAsZBqMe1SbL+2k7bIGUX2iNIIectsbjmu8INLN7yNNEHXKBrlDiFfqrdcJDydZEPXZDinG0is/YcV6EPWA+42JeJuAy390XW49hI2JNjC8cAYEGJvlJzzOvb8mztStPFeOUkS2muH2l1OxOIGsK94kZU+BdLL1W7xM/hBhYvMuv0NdzhvFoWl5q4rY6pC1iWnIULFxI+6vocbpizt8R2+IDb/egkFXaS5Ub4u496HYU64b2GYARml8j3hIKo9rCGOyh84d69id6f2gfWjAsIOgAMGaEwlwisIzaucGe+LL5/hS1RiH4Tk+5n6zGB8+9F3uaAWhZ9O3ToUK+MDqURSFkNd4lDaw976f18YPPeYp00w9DHrcxWFN6GMKxYsUKJzZEjR5LSV8B6DviLROThn3wQtuEMonhrXko6xrYLGaaHb1iwdSUlJapZ4mjMOEqsT0jZ2fmSo+xOBBgNd7icUBQK1tHRob8jJeTFrJlopGX+QYxP4qCqqkqLdlQqoyQAMGeXtbFtV6KMR7fNNmzExZPBSEYTGWm4MLy4trZWHV4iD8854t3t27frjoAkwcRHtp6lmQ46jgnjfKIWw1iXWW3IeuCb5L7WRIBpnwAY+kUBmpRKb86LDhDhXL58WcH3Ng0izPevBBPLly/XKXPw4MGUkgs4XTKunnb/kOweFnWtBGQqCZ8kL+2CibNcE2sJVq5cGQj1i1XeIRlPzcpLxhf1lpemsVNGQzWSYB7byEowIQOtjglCQOSXSmPuwo897X4sIDt6S9PS2B7Uwh4qzBAvnIn4uof593/BBPOVKRKHteE48T04N0sjfxX13kY/W0gBO12TnjFjhl+UI8PyZ3eNcix1pXTeQ5mGSqfMX3fuB6mWS3Wbg5iI1pjSLZeWlpZqldAen3JpXgkmtBZEh+M+G99ATQmx5w7hv1IFDGE+aWwNFw2lA5r6L46LEqyx9WKcU0VFRVoFOwposqKohdhz0KaauFse6o2t4eI1SYTH7RzTg2Q9SXuhdLobAPOLWwQ3tvpPebWxsdE/35zuphaCdt3nQSmTykQ6+zLoJLXgdIvsaNaB9erJWzOxi4f2jnvR/Pnz1cTTmXNxC95OZKnUGnII7LZkYFPdpviueyHOAUeGV01n61GcaYFlUKzHI3vXtvXkpNIB7Mz7ofPemDhOJ50NKalolXcSReEHvGtbowB1EieXgyNjG6JW1mEylDwIFoi9U42OkjXSNLA3oj6Ykle4g/t9R0D8LZXnxU1esWRttXM7lwwJNA6qCL2EpMO44iYIXNaFyMlFeu3t7Zq78ugeBbZz2d4RX2mBa/oFTRPLQs+ggfBlGA/gYV09hYvQR5eScRvF+Zt7iOm92JjMxU9snam3kLXPALvWYHlsoztBmgjtIGiazkMhw6ABC4+GpADa/QuA5bJ+Temn5sv/f4gSo/c5YNfYKd9kGVBdOCmO5hI1pkAC3t1uExKfmwTbFfoL4HACDlN/y5p+RZLfU/Fvs+BgbK1psLBXAjhR+qauh2unTfRdAa8N4D5pqQL+nwADAKGFDQ//Deb9AAAAAElFTkSuQmCC') no-repeat;
+  -webkit-mask-size: $list-disclosure-size;
+  @include background-gradient(saturate($active-color, 10%));
+  width: $list-disclosure-size;
+  height: $list-disclosure-size; 
+}
+
+// ********************************************************************************************
+// ** Eingabefelder
+// ********************************************************************************************
+
+/* Betragseingabe */
+.inputBetrag 
+{
+    text-align: right;
+}
+
+// ********************************************************************************************
+// ** Rechenstreifen
+// ********************************************************************************************
+
+
+.CalcValuesList .x-list-item {
+    border: 0px;
+    font-size: $linde-fontsize-small;
+}
+
+.CalcValuesResult {
+    color: #0000FF;
+}
+
+.CalcValuesPlus {
+    color: #000000;
+}
+
+.CalcValuesMinus {
+    color: #FF0000;
+}
+
+.CalcValuesList .plus {
+}
+
+.CalcValuesListTable 
+{
+    width: 100%;
+}
+
+/* Spalte mit dem Wert */
+.CalcValuesListColumn1
+{
+    text-align: right;
+}
+
+/* Operator */
+.CalcValuesListColumn2
+{
+    text-align: right;
+    width: 20px;
+}
+
+.CalcValuesList div.x-list-item-label {
+    border-top: none !important;
+    border-bottom: none !important; /* For the last row */
+}
+
+// ********************************************************************************************
+// ** Infobox
+// ********************************************************************************************
+
+.InfoTitle {
+    font-weight: bold;
+}
+
+.InfoText {
+    font-size: $linde-fontsize-small;
+	padding-top: 10px;
+}
+
+.InfoBoxTitle{
+/*	background-image: -webkit-linear-gradient(bottom, $linde-gelb 20%, $linde-bg-end 95%);
+	-webkit-box-shadow: 1px 1px 2px 2px #000077;
+	box-shadow: 1px 1px 2px 2px #000077;
+	-webkit-border-radius: 5px 5px 0px 0px;
+	border-radius: 5px 5px 0px 0px;
+	width: 100%;
+	border-bottom: 0px; */
+}
+
+.InfoBoxContent {
+	/*-webkit-box-shadow: 1px 1px 2px 2px #000077;
+	box-shadow: 1px 1px 2px 2px #000077;
+	-webkit-border-radius: 0px 0px 5px 5px;
+	border-radius: 0px 0px 5px 5px;
+	width: 100%;
+	border-top: 0px;*/
+}
+
+// ********************************************************************************************
+// ** Listen (Belege, Lohnzettel, ...)
+// ********************************************************************************************
+
+.ItemListTable{
+    width: 100%;
+}
+
+.ItemListColumn1{
+    text-align: left;
+    width: 80%;
+}
+
+.ItemListColumn2{
+    text-align: right;
+    width: 20%;
+}
+
+.ItemListText{
+}
+
+.ItemListComment{
+    color: $linde-fontcolor-comment;
+    font-size: $linde-fontsize-small;
+}
+
+// ********************************************************************************************
+// ** Overlays
+// ********************************************************************************************
+
+.overlayPageHeader
+{
+  font-size: $linde-fontsize-large;
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  height: 55px;
+}
+
+.overlayDescription {
+  font-size: $linde-fontsize-small;
+  background-color: white;
+  padding: 10px;
+}
+
+// ********************************************************************************************
+// ** Dashboard
+// ********************************************************************************************
+
+.DashboardPanel 
+{
+    background-image: url(../images/linde-background.png);
+    background-repeat: repeat;
+    background-color: white;
+}
+
+.DashboardPanelTransparent {
+    background-color: #f7f87f;
+    background: transparent;
+}
+
+// ********************************************************************************************
+// ** Validierung
+// ********************************************************************************************
+
+.ValidationMessagePanel {
+
+    color: $linde-error-color;
+    font-size: smaller;
+    padding: 10px;
+	background-color: #ffe8e8;
+	border: 1px solid $linde-error-border-color;
+
+}
